@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Dancing Script;
+    src: url('fonts/Dancing_Script/DancingScript-Regular.ttf');
+}
+body{
+    font-family: 'Dancing Script';
+    background-color: #02010a;
+}
+header{
+    background-color: #5b7989;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+header h1, header li{
+    font-size: 29px;
+}
+header h1{
+    text-align: left;
+    padding-left: 30px;
+    width: 50%;
+    margin-right: 20%;
+}
+header nav{
+    width: 30%;
+    text-align: right;
+    vertical-align: middle;
+}
+header ul{
+    padding-right: 30px;
+    list-style: none;
+}
+header li{
+    display: inline-block;
+}
+header a[href="#"]{
+    text-decoration: none;
+}
+#contenido{
+    text-align: center;
+}
+@media only screen and (max-width: 900px){
+    #contenido{
+        max-width: 900px;
+    }
+}
+@media only screen and (min-width: 900px){
+    #contenido{
+        width: 100%;
+    }
+}

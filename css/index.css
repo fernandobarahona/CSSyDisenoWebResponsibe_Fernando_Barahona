@@ -1,54 +1,75 @@
-/*definicion de la tipografia a usarse*/
-@font-face {
+@font-face {        /*definicion de la tipografia a usarse*/
     font-family: Dancing Script;
     src: url('fonts/Dancing_Script/DancingScript-Regular.ttf');
 }
-*{padding: 0px;margin: 0px;}
+
+*{padding: 0px;margin: 0px;}        /*para tener en cero los padd y margin de todos los elementos para asi empezar de cero sin confucion*/
+
 body{
-    font-family: 'Dancing Script';
+    font-family: 'Dancing Script', cursive;
     background-color: #02010a;
-}
-header{
-    background-color: #5b7989;
     display: flex;
-    border: 1px solid black;
-    border-radius: 15px;
+    justify-content: center;
 }
-header h1, header ul{
-    font-size: 29px;
-    margin: 25px 0;
+#contenido{
+    width: 100vw
+}
+/*-----------SECCTION HEADER----------------
+--------------------------------------------*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5b7989;
+    border-radius: 15px 15px 0 0;    
+}
+header h1, header nav{
+    padding: 20px 30px;
 }
 header h1{
-    text-align: left;
-    padding-left: 30px;
-    width: 50%;
-    margin-right: 20%;
-}
-header nav{
-    width: 30%;
-    text-align: right;
-    vertical-align: middle;
-}
-header ul{
-    padding-right: 30px;
-    list-style: none;
+    font-size: 35px;
+    color: white;
+    text-shadow:2px 2px #02010a;
 }
 header li{
+    font-size: 25px;
     display: inline-block;
+    list-style: none;
+}
+header a{
+    color: white;
 }
 header a[href="#"]{
     text-decoration: none;
 }
-#contenido{
-    text-align: center;
+/*-----------SECCTION MAIN----------------
+--------------------------------------------*/
+#imagen_Central{
+    background-color: #82c3a6;
+    display: flex;
+    justify-content: center;
 }
-@media only screen and (max-width: 900px){
+#imagen_Central img{
+    margin: 40px;
+}
+#imagen_Secundaria{
+    background-color: #d5c75f;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #02010a;
+    display: flex;
+    justify-content: space-around;
+}
+#imagen_Secundaria img{
+    margin: 40px;
+}
+
+@media only screen and (min-width: 900px){
     #contenido{
         max-width: 900px;
     }
 }
-@media only screen and (min-width: 900px){
-    #contenido{
-        width: 100%;
-    }
+@media only screen and (max-width: 900px){
+
 }

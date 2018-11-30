@@ -1,7 +1,9 @@
+/*definicion de la tipografia a usarse*/
 @font-face {
     font-family: Dancing Script;
     src: url('fonts/Dancing_Script/DancingScript-Regular.ttf');
 }
+*{padding: 0px;margin: 0px;}
 body{
     font-family: 'Dancing Script';
     background-color: #02010a;
@@ -12,8 +14,9 @@ header{
     border: 1px solid black;
     border-radius: 15px;
 }
-header h1, header li{
+header h1, header ul{
     font-size: 29px;
+    margin: 25px 0;
 }
 header h1{
     text-align: left;

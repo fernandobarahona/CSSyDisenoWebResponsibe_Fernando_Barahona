@@ -43,7 +43,7 @@ header a{
 header a[href="#"]{
     text-decoration: none;
 }
-/*-----------SECCTION MAIN----------------
+/*-----------SECCTION MAIN CENTRAL----------------
 --------------------------------------------*/
 #imagen_Central{
     background-color: #82c3a6;
@@ -53,7 +53,9 @@ header a[href="#"]{
 #imagen_Central img{
     margin: 40px;
 }
-#imagen_Secundaria{
+/*-----------SECCTION MAIN SECUNDARIA----------------
+--------------------------------------------*/
+#imagenes_Secundarias{
     background-color: #d5c75f;
     border-width: 1px 0;
     border-style: solid;
@@ -61,9 +63,52 @@ header a[href="#"]{
     display: flex;
     justify-content: space-around;
 }
-#imagen_Secundaria img{
-    margin: 40px;
+#imagenes_Secundarias figure[id^="columna"]{
+    text-align: center;
+    margin: 40px 40px 0  40px;
 }
+#imagenes_Secundarias figcaption{
+    margin: 0 0 40px  0;
+}
+#imagenes_Secundarias a{
+    width: 40px;
+    height: auto;
+    text-decoration: none;
+    color: red;
+}
+#columna1 a:hover img{
+    animation-name: rotacionFoto;
+    animation-duration: .4s;
+}
+#columna2 a:hover img{
+    animation-name: translacionFoto;
+    animation-duration: .4s; 
+}
+
+/*-----------SECCTION FOOTER----------------
+--------------------------------------------*/
+footer{
+    background-color: #C6d5c5;
+    border-radius: 0 0 9px 9px;
+    display: flex;
+}
+
+
+
+@keyframes rotacionFoto {
+    from {transform: rotate(0);}
+    to {transform: rotate(10deg);}
+}
+@keyframes translacionFoto {
+    0% {
+        transform: translate(0px, 0px); 
+    }
+    100% { 
+        transform: translate(20px, -5px); 
+    }
+}
+
+
 
 @media only screen and (min-width: 900px){
     #contenido{

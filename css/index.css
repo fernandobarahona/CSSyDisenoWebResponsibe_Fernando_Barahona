@@ -74,7 +74,10 @@ header a[href="#"]{
     width: 40px;
     height: auto;
     text-decoration: none;
-    color: red;
+    color: #02010a;
+}
+#columna1 img, #columna2 img{
+    width: 100%;
 }
 #columna1 a:hover img{
     animation-name: rotacionFoto;
@@ -91,10 +94,22 @@ footer{
     background-color: #C6d5c5;
     border-radius: 0 0 9px 9px;
     display: flex;
+    padding: 20px;
+}
+.col_Footer{
+    width: 25%;
+    min-width: 189px;
+    background-color: #5b7989;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 8px;
 }
 
 
-
+/*-------------TRANSFORMACIONES-----------
+La primera es para la rotacion que se aplica a la primera imagen
+de las imagenes secundarias del main y la segunda para la translacion
+de la segunda imagen de ahi mismo */
 @keyframes rotacionFoto {
     from {transform: rotate(0);}
     to {transform: rotate(10deg);}
@@ -109,12 +124,46 @@ footer{
 }
 
 
-
+/*------------MEDIA QUERY PARA LAPTOP----------*/
 @media only screen and (min-width: 900px){
     #contenido{
         max-width: 900px;
     }
 }
+/*------------MEDIA QUERY PARA TELEFONOS----------*/
 @media only screen and (max-width: 900px){
+     #contenido{
+        width: 100%;
+    }
+    header{
 
+    }    
+    footer{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .col_Footer{
+        width: 40%;
+        text-align: justify;
+        margin-left: 2%;
+        margin-right: 2%;
+    } 
+}
+/*---------------------Una media query mas para que haya un
+ salto intermedio en el tamano 
+ de los elementos del footer--------------------------------*/
+@media only screen and (max-width: 600px){
+    #contenido{
+        width: 100%;
+    }    
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .col_Footer{
+        width: 90%;
+        text-align: justify;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
 }

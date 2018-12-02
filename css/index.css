@@ -109,7 +109,7 @@ footer{
 /*-------------TRANSFORMACIONES-----------
 La primera es para la rotacion que se aplica a la primera imagen
 de las imagenes secundarias del main y la segunda para la translacion
-de la segunda imagen de ahi mismo */
+de la segunda imagen de ahi mismo.*/
 @keyframes rotacionFoto {
     from {transform: rotate(0);}
     to {transform: rotate(10deg);}
@@ -134,10 +134,13 @@ de la segunda imagen de ahi mismo */
 @media only screen and (max-width: 900px){
      #contenido{
         width: 100%;
+    } 
+    header h1{
+        font-size: calc(20px + 1.4vw);
     }
-    header{
-
-    }    
+    header li{
+        font-size: calc(10px + 1.4vw);
+    }
     footer{
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -152,10 +155,36 @@ de la segunda imagen de ahi mismo */
 /*---------------------Una media query mas para que haya un
  salto intermedio en el tamano 
  de los elementos del footer--------------------------------*/
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 610px){
     #contenido{
         width: 100%;
     }    
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        font-size: calc(18px + 1.8vw);
+        padding: 10px 20px 0 10px;
+    }
+    header nav{
+        padding: 8px 0px;
+    }
+    header li{
+        margin: 0 12px;
+    }
+
+    #imagen_Central img{
+        margin: 15px;
+    }
+    #imagenes_Secundarias figure[id^="columna"]{
+        text-align: center;
+        margin: 15px 15px 0px 15px;
+    }
+    #imagenes_Secundarias figcaption{
+        font-size: 12px;
+        margin: 0 0 15px  0;
+    }
+
     footer{
         flex-direction: column;
         align-items: center;

@@ -50,8 +50,12 @@ header a[href="#"]{
     display: flex;
     justify-content: center;
 }
+#imagen_Central #columna_ImCentral{
+    text-align: center;
+    margin: 5%;
+}
 #imagen_Central img{
-    margin: 40px;
+    width: 100%;
 }
 /*-----------SECCTION MAIN SECUNDARIA----------------
 --------------------------------------------*/
@@ -171,10 +175,6 @@ de la segunda imagen de ahi mismo.*/
     }
     header li{
         margin: 0 12px;
-    }
-
-    #imagen_Central img{
-        margin: 15px;
     }
     #imagenes_Secundarias figure[id^="columna"]{
         text-align: center;

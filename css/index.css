@@ -12,7 +12,9 @@ body{
     justify-content: center;
 }
 #contenido{
-    width: 100vw
+    width: 100vw;
+    animation-name: inicioPagina;
+    animation-duration: .4s;
 }
 /*-----------SECCTION HEADER----------------
 --------------------------------------------*/
@@ -75,8 +77,6 @@ header a[href="#"]{
     margin: 0 0 40px  0;
 }
 #imagenes_Secundarias a{
-    width: 40px;
-    height: auto;
     text-decoration: none;
     color: #02010a;
 }
@@ -110,10 +110,22 @@ footer{
 }
 
 
-/*-------------TRANSFORMACIONES-----------
-La primera es para la rotacion que se aplica a la primera imagen
-de las imagenes secundarias del main y la segunda para la translacion
-de la segunda imagen de ahi mismo.*/
+/*-------------ANIMACIONES-----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
+@keyframes inicioPagina{
+    0% {
+        margin-top: 150px; 
+    }
+    60% {
+        margin-top: -5px; 
+    }
+    100% { 
+        margin-top: 0px; 
+    }
+}
 @keyframes rotacionFoto {
     from {transform: rotate(0);}
     to {transform: rotate(10deg);}
@@ -128,13 +140,21 @@ de la segunda imagen de ahi mismo.*/
 }
 
 
-/*------------MEDIA QUERY PARA LAPTOP----------*/
+/*------------MEDIA QUERY PARA LAPTOP----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
 @media only screen and (min-width: 900px){
     #contenido{
         max-width: 900px;
     }
 }
-/*------------MEDIA QUERY PARA TELEFONOS----------*/
+/*------------MEDIA QUERY PARA TABLETS----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
 @media only screen and (max-width: 900px){
      #contenido{
         width: 100%;
@@ -144,6 +164,12 @@ de la segunda imagen de ahi mismo.*/
     }
     header li{
         font-size: calc(10px + 1.4vw);
+    }
+    #imagenes_Secundarias figure[id^="columna"]{
+        margin: 5% 5% 0  5%;
+    }
+    #imagenes_Secundarias figcaption{
+        margin: 0 0 5% 0;
     }
     footer{
         flex-wrap: wrap;
@@ -156,10 +182,14 @@ de la segunda imagen de ahi mismo.*/
         margin-right: 2%;
     } 
 }
-/*---------------------Una media query mas para que haya un
- salto intermedio en el tamano 
- de los elementos del footer--------------------------------*/
-@media only screen and (max-width: 610px){
+/*------------MEDIA QUERY PARA TELEFONOS----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
+
+@media only screen and (max-width: 610px){/*Una media query mas para que haya un salto intermedio en el tamano  de los elementos del footer*/
+
     #contenido{
         width: 100%;
     }    
@@ -176,15 +206,9 @@ de la segunda imagen de ahi mismo.*/
     header li{
         margin: 0 12px;
     }
-    #imagenes_Secundarias figure[id^="columna"]{
-        text-align: center;
-        margin: 15px 15px 0px 15px;
+    #imagenes_Secundarias{
+        flex-direction: column;
     }
-    #imagenes_Secundarias figcaption{
-        font-size: 12px;
-        margin: 0 0 15px  0;
-    }
-
     footer{
         flex-direction: column;
         align-items: center;

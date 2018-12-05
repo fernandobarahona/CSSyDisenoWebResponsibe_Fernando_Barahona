@@ -1,0 +1,215 @@
+@font-face {        /*definicion de la tipografia a usarse*/
+    font-family: Dancing Script;
+    src: url('fonts/Dancing_Script/DancingScript-Regular.ttf');
+}
+
+*{padding: 0px;margin: 0px;}        /*para tener en cero los padd y margin de todos los elementos para asi empezar de cero sin confucion*/
+
+body{
+    font-family: 'Dancing Script', cursive;
+    background-color: #02010a;
+    display: flex;
+    justify-content: center;
+}
+#contenido{
+    width: 100vw;
+    animation-name: inicioPagina;
+    animation-duration: .4s;
+}
+/*-----------SECCTION HEADER----------------
+--------------------------------------------*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5b7989;
+    border-radius: 15px 15px 0 0;    
+}
+header h1, header nav{
+    padding: 20px 30px;
+}
+header h1{
+    font-size: 35px;
+    color: white;
+    text-shadow:2px 2px #02010a;
+}
+header li{
+    font-size: 25px;
+    display: inline-block;
+    list-style: none;
+}
+header a{
+    color: white;
+}
+header a[href="#"]{
+    text-decoration: none;
+}
+/*-----------SECCTION GALERIA----------------
+--------------------------------------------*/
+#galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #d5c75f;
+}
+#galeria figure{ 
+    width: 31%;
+    margin: 1%;
+}
+#galeria img{
+    width: 100%;
+}
+#galeria figure:first-child img{
+    filter: blur(2px);
+}
+#galeria figure:nth-child(even) img{
+    filter: grayscale(100%);
+}
+#galeria figure:nth-child(3) img{
+    filter: sepia(100%);
+}
+
+
+/*-----------SECCTION FOOTER----------------
+--------------------------------------------*/
+footer{
+    background-color: #C6d5c5;
+    border-radius: 0 0 9px 9px;
+    display: flex;
+    padding: 20px;
+}
+.col_Footer{
+    width: 25%;
+    min-width: 189px;
+    background-color: #5b7989;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 8px;
+}
+
+
+/*-------------ANIMACIONES-----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
+@keyframes inicioPagina{
+    0% {
+        margin-top: 150px; 
+    }
+    60% {
+        margin-top: -5px; 
+    }
+    100% { 
+        margin-top: 0px; 
+    }
+}
+@keyframes rotacionFoto {
+    from {transform: rotate(0);}
+    to {transform: rotate(10deg);}
+}
+@keyframes translacionFoto {
+    0% {
+        transform: translate(0px, 0px); 
+    }
+    100% { 
+        transform: translate(20px, -5px); 
+    }
+}
+
+
+/*------------MEDIA QUERY PARA LAPTOP----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
+@media only screen and (min-width: 900px){
+    #contenido{
+        max-width: 900px;
+    }
+}
+/*------------MEDIA QUERY PARA TABLETS----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
+@media only screen and (max-width: 900px){
+    #contenido{
+        width: 100%;
+    } 
+/*-----------SECCTION HEADER----------------
+--------------------------------------------*/
+    header h1{
+        font-size: calc(20px + 1.4vw);
+    }
+    header li{
+        font-size: calc(10px + 1.4vw);
+    }
+/*-----------SECCTION GALERIA----------------
+--------------------------------------------*/
+#galeria figure{ 
+    width: 48%;
+    margin: 1%;
+}
+#galeria img{
+    width: 100%;
+}
+/*-----------SECCTION FOOTER----------------
+--------------------------------------------*/
+    footer{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .col_Footer{
+        width: 40%;
+        text-align: justify;
+        margin-left: 2%;
+        margin-right: 2%;
+    } 
+}
+/*------------MEDIA QUERY PARA TELEFONOS----------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------*/
+
+@media only screen and (max-width: 610px){/*Una media query mas para que haya un salto intermedio en el tamano  de los elementos del footer*/
+
+/*-----------SECCTION HEADER----------------
+--------------------------------------------*/
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        font-size: calc(18px + 1.8vw);
+        padding: 10px 20px 0 10px;
+    }
+    header nav{
+        padding: 8px 0px;
+    }
+    header li{
+        margin: 0 12px;
+    }
+/*-----------SECCTION GALERIA----------------
+--------------------------------------------*/
+#galeria figure{ 
+    width: 98%;
+    margin: 1%;
+}
+#galeria img{
+    width: 100%;
+}
+/*-----------SECCTION FOOTER----------------
+--------------------------------------------*/
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .col_Footer{
+        width: 90%;
+        text-align: justify;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
